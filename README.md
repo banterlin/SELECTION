@@ -36,5 +36,5 @@ Note that `xxx.pkl` is a dictionary that stores the clinical textual data in the
 >>> subset[key]['label'] # the disease labels
 ```
 
-```The code used in this studied were adopted from [A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics,doi: 10.1038/s41551-023-01045-x]
-```
+## The code used in this studied were adopted from [A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics,doi: 10.1038/s41551-023-01045-x]
+
