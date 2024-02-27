@@ -1,5 +1,3 @@
-<img src="logo.png" width="200" height="200" align=right />
-
 This repository provides the code for [Deep Learning Decision Support Recommends Therapeutic Planning in Unresectable-Hepatocellular Carcinoma]. Based on the code, you can easily train your own SELECTION by configuring your own dataset and modifying the training details (such as optimizer, learning rate, etc).
 
 ## Overview
