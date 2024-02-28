@@ -28,12 +28,11 @@ Note that `xxx.pkl` is a dictionary that stores the clinical textual data in the
 >>> subset = pickle.load(f)
 >>> f.close()
 >>> list(subset.keys())[0:10] # display top 10 case ids
->>> key = list(subset.keys())[0] # select the 1st key
+>>> key = list(subset.keys()) # select the patient ID
 >>> subset[key] # display the clinical data
->>> subset[key]['pdesc'] # the chief complaint feature
->>> subset[key]['bics'] # the demographics information (age and sex)
->>> subset[key]['bts'] #  the laboratory test results
->>> subset[key]['label'] # the disease labels
+>>> subset[key]['Baseline'] # the demographics information (age and sex)
+>>> subset[key]['Lab'] #  the laboratory test results
+>>> subset[key]['label'] # the clinical endpoint labels
 ```
 
 ## The code used in this studied were adopted from [A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics,doi: 10.1038/s41551-023-01045-x]
