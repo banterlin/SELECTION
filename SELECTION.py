@@ -27,13 +27,13 @@ tk_lim = 40
 disease_list = ['OS','Non-OS']
 
 parser = argparse.ArgumentParser(description="Trainning SELECTION for HAIC/TACE Treatment Decision")
-parser.add_argument('--CLS', action='store', dest='CLS', type=int,default=2,help='No of classes')
-parser.add_argument('--BSZ', action='store', dest='BSZ', type=int,default=8,help='Batch Size')
-parser.add_argument('--epochs', action='store', dest='epochs', type=int,default=150,help='Epoch Size')
-parser.add_argument('--lr', action='store', dest='lr', type=int,default=3e-5,help='Learning Rate')
+parser.add_argument('--CLS', action='store', dest='CLS', type=int,help='No of classes')
+parser.add_argument('--BSZ', action='store', dest='BSZ', type=int,help='Batch Size')
+parser.add_argument('--epochs', action='store', dest='epochs', type=int,help='Epoch Size')
+parser.add_argument('--lr', action='store', dest='lr', type=int,help='Learning Rate')
 parser.add_argument('--seed', action='store', dest='seed', type=int,default=555,help='Trainning seed')
-parser.add_argument('--EXP', action='store', dest='EXP', type=str,default='cHAIC',help='TACE/HAIC/TC/HC')
-parser.add_argument('--EF', action='store', dest='EF', type=str,default='img_eva',help='val/train/test')
+parser.add_argument('--EXP', action='store', dest='EXP', type=str',help='TACE/HAIC/TC/HC')
+parser.add_argument('--EF', action='store', dest='EF', type=str,help='val/train/test')
 parser.add_argument('--DATA_DIR', action='store', dest='DATA_DIR', type=str,
                     default= 'C:\\...'
                     ,help='Folder Path for images')
@@ -138,12 +138,12 @@ class Data(Dataset):
         if self.target_transform:
             label = self.target_transform(label)
 
-        demo = torch.as_tensor(np.array([self.mm_data[k]['年龄'],self.mm_data[k]['性别'],self.mm_data[k]['ECOG (0或1)'],
-                                         self.mm_data[k]['合并症（糖尿病/高血压）'],self.mm_data[k]['肝炎 (0无 1乙肝 2丙肝）'],
-                                         self.mm_data[k]['腹水']])).float()
-        IV = torch.as_tensor(np.array([self.mm_data[k]['AFP'], self.mm_data[k]['数量'], self.mm_data[k]['最大肿瘤直径'],
-                      self.mm_data[k]['BCLC分期 '], self.mm_data[k]['肝外转移情况（0无  1有）'],
-                      self.mm_data[k]['门脉癌栓 ']])).float()
+        demo = torch.as_tensor(np.array([self.mm_data[k]['age'],self.mm_data[k]['sex'],self.mm_data[k]['ECOG'],
+                                         self.mm_data[k]['comorbidity'],self.mm_data[k]['hepatitis'],
+                                         self.mm_data[k]['ascites']])).float()
+        IV = torch.as_tensor(np.array([self.mm_data[k]['AFP'], self.mm_data[k]['tumour_n'], self.mm_data[k]['MaximumRadius'],
+                      self.mm_data[k]['BCLC '], self.mm_data[k]['metastasis'],
+                      self.mm_data[k]['PVTT']])).float()
         lab = torch.as_tensor(np.array([self.mm_data[k]['ALB'],self.mm_data[k]['ALT'],self.mm_data[k]['AST'],
                                          self.mm_data[k]['TBIL'],self.mm_data[k]['PT'],self.mm_data[k]['INR'],
                                          self.mm_data[k]['PLT'],self.mm_data[k]['child-pugh (5 or 6 or 7)']])).float()
