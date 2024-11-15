@@ -1,8 +1,8 @@
-This repository provides the code for [A deep learning model for personalized intra-arterial therapy planning in unresectable hepatocellular carcinom]. Based on the code, you can easily train your own SELECTION by configuring your own dataset and modifying the training details (such as optimizer, learning rate, etc).
+A deep learning model for personalized intra-arterial therapy planning in unresectable hepatocellular carcinoma: a multicenter retrospective study
+Lin, Xiaoqi et al.
+eClinicalMedicine, Volume 75, 102808
 
-## A deep learning model for personalized intra-arterial therapy planning in unresectable hepatocellular carcinoma: a multicenter retrospective study
-## Lin, Xiaoqi et al.
-## eClinicalMedicine, Volume 75, 102808
+This repository provides the code for [A deep learning model for personalized intra-arterial therapy planning in unresectable hepatocellular carcinom]. Based on the code, you can easily train your own SELECTION by configuring your own dataset and modifying the training details (such as optimizer, learning rate, etc).
 
 ## Overview
 SELECTION is a ransformer-based multi-modal medical prognosis model. It differs from the traditional multi-modal apporach of fusing features from CNN with clinical data to classify clinical endpoint, where SELECTION considers holistic multi-modal information from CECT images as well as clinical information as sequences of tokens.
